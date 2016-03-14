@@ -1,2 +1,2 @@
 # fast-dev-platform-android
-快速开发平台-安卓
+快速开发平台-Android
