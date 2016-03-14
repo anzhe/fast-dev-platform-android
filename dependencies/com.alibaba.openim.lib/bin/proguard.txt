@@ -1,0 +1,121 @@
+# view res/layout/demo_fragment_tabs.xml #generated:14
+-keep class android.support.v4.app.FragmentTabHost { <init>(...); }
+
+# view res/layout/aliwx_activity_at_msg_list.xml #generated:47
+# view res/layout/aliwx_multi_image_player.xml #generated:7
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/aliwx_tooltip_chatwindow_rec_funbar.xml #generated:9
+-keep class com.alibaba.mobileim.appmonitor.tiptool.ExLinearLayout { <init>(...); }
+
+# view res/layout/aliwx_tooltip_chatwindow_rec_funbar.xml #generated:16
+-keep class com.alibaba.mobileim.appmonitor.tiptool.ExListView { <init>(...); }
+
+# view res/layout/aliwx_tooltip_chatwindow.xml #generated:1
+# view res/layout/aliwx_tooltip_chatwindow_2.xml #generated:1
+-keep class com.alibaba.mobileim.appmonitor.tiptool.ExRelativeLayout { <init>(...); }
+
+# view res/layout/aliwx_tooltip_chatwindow_2.xml #generated:8
+-keep class com.alibaba.mobileim.appmonitor.tiptool.HorImageListView { <init>(...); }
+
+# view res/layout/aliwx_template_webview_item.xml #generated:34
+-keep class com.alibaba.mobileim.extra.xblink.webview.XBHybridWebView { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_item.xml #generated:199
+# view res/layout/aliwx_chatting_detail_item.xml #generated:231
+# view res/layout/aliwx_chatting_detail_item.xml #generated:76
+# view res/layout/aliwx_imageviewer.xml #generated:57
+-keep class com.alibaba.mobileim.fundamental.widget.GifView { <init>(...); }
+
+# view res/layout/aliwx_tribe_member_layout.xml #generated:43
+-keep class com.alibaba.mobileim.fundamental.widget.LetterListView { <init>(...); }
+
+# view res/layout/aliwx_image_detail_fragment.xml #generated:14
+-keep class com.alibaba.mobileim.fundamental.widget.MutliImageGifView { <init>(...); }
+
+# view res/layout/aliwx_fragment_send_at_message_detail.xml #generated:104
+# view res/layout/aliwx_fragment_send_at_message_detail.xml #generated:134
+-keep class com.alibaba.mobileim.fundamental.widget.NoScrollGridView { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_smily.xml #generated:30
+-keep class com.alibaba.mobileim.fundamental.widget.PageControlView { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_item.xml #generated:219
+# view res/layout/aliwx_chatting_detail_item.xml #generated:52
+# view res/layout/aliwx_template_horizontal_item.xml #generated:24
+# view res/layout/aliwx_template_horizontal_item.xml #generated:35
+# view res/layout/aliwx_template_text_item.xml #generated:18
+-keep class com.alibaba.mobileim.fundamental.widget.PatchedTextView { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_item.xml #generated:211
+# view res/layout/aliwx_chatting_detail_item.xml #generated:92
+# view res/layout/aliwx_image_detail_fragment.xml #generated:50
+-keep class com.alibaba.mobileim.fundamental.widget.ProgressWheel { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail.xml #generated:174
+-keep class com.alibaba.mobileim.fundamental.widget.RecordButton { <init>(...); }
+
+# view res/layout/aliwx_image_detail_fragment.xml #generated:7
+-keep class com.alibaba.mobileim.fundamental.widget.TouchImageView { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_smily.xml #generated:14
+# view res/layout/aliwx_chatting_detail_smily.xml #generated:22
+-keep class com.alibaba.mobileim.fundamental.widget.ViewScroller { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_item.xml #generated:14
+# view res/layout/aliwx_chatting_detail_item.xml #generated:302
+# view res/layout/aliwx_chatting_detail_left_right_head.xml #generated:14
+# view res/layout/aliwx_chatting_detail_left_right_head.xml #generated:6
+# view res/layout/aliwx_template_custom_item.xml #generated:16
+# view res/layout/aliwx_template_custom_item.xml #generated:9
+# view res/layout/aliwx_template_flow_item.xml #generated:32
+# view res/layout/aliwx_template_horizontal_item.xml #generated:48
+# view res/layout/aliwx_template_horizontal_item.xml #generated:7
+# view res/layout/aliwx_template_vertical_item.xml #generated:42
+# view res/layout/demo_contacts_item.xml #generated:22
+# view res/layout/demo_custom_tribe_msg_layout.xml #generated:7
+# view res/layout/demo_system_message_item.xml #generated:14
+# view res/layout/demo_tribe_item.xml #generated:29
+# view res/layout/demo_tribe_members_item.xml #generated:8
+-keep class com.alibaba.mobileim.fundamental.widget.WXNetworkImageView { <init>(...); }
+
+# view res/layout/aliwx_select_dialog.xml #generated:26
+-keep class com.alibaba.mobileim.fundamental.widget.WxAlertController$RecycleListView { <init>(...); }
+
+# view res/layout/aliwx_search_text.xml #generated:40
+# view res/layout/demo_activity_find_contact.xml #generated:35
+-keep class com.alibaba.mobileim.fundamental.widget.WxEditText { <init>(...); }
+
+# view res/layout/aliwx_tribe_member_layout.xml #generated:29
+-keep class com.alibaba.mobileim.fundamental.widget.refreshlist.PullToRefreshDummyHeadListView { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail_list.xml #generated:2
+# view res/layout/aliwx_fragment_at_msg_list.xml #generated:27
+# view res/layout/aliwx_message.xml #generated:11
+-keep class com.alibaba.mobileim.fundamental.widget.refreshlist.PullToRefreshListView { <init>(...); }
+
+# view res/layout/demo_activity_tribe_members.xml #generated:32
+# view res/layout/demo_fragment_tribe.xml #generated:16
+-keep class com.alibaba.mobileim.fundamental.widget.refreshlist.YWPullToRefreshListView { <init>(...); }
+
+# view res/layout/aliwx_activity_at_msg_list.xml #generated:35
+-keep class com.alibaba.mobileim.fundamental.widget.slidingtab.SlidingTabLayout { <init>(...); }
+
+# view res/layout/aliwx_chatting_detail.xml #generated:169
+-keep class com.alibaba.mobileim.ui.common.clipboard.ClipboardEditText { <init>(...); }
+
+# view res/layout/aliwx_imageview.xml #generated:2
+-keep class com.alibaba.mobileimexternal.ui.fundamental.widget.CircleImageView { <init>(...); }
+
+# view res/layout/__leak_canary_ref_row.xml #generated:24
+-keep class com.alibaba.squareup.leakcanary.internal.DisplayLeakConnectorView { <init>(...); }
+
+# view res/layout/__leak_canary_ref_row.xml #generated:40
+-keep class com.alibaba.squareup.leakcanary.internal.MoreDetailsView { <init>(...); }
+
+# view res/layout/demo_fragment_contacts.xml #generated:47
+-keep class com.taobao.openimui.feature.contact.view.LetterListView { <init>(...); }
+
+# view res/layout/demo_fragment_contacts.xml #generated:35
+-keep class com.taobao.openimui.feature.contact.view.PullToRefreshDummyHeadListView { <init>(...); }
+
