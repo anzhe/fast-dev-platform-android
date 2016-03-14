@@ -2,6 +2,7 @@ package fast.dev.platform.android.activity;
 
 import com.tencent.bugly.crashreport.CrashReport;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,9 @@ public class MainActivity extends BaseActivity {
 		CrashReport.setUserSceneTag(getContext(), 11886);
 		
 //		CrashReport.testJavaCrash();
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayShowHomeEnabled(false);
 		
 		try {
 			throw new RuntimeException("手动捕获异常测试");
