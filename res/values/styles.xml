@@ -17,4 +17,14 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="MyTheme.FullscreenAppTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="MyTheme.LoadingPage" parent="MyTheme.FullscreenAppTheme">
+        <item name="android:windowBackground">@drawable/loading_img</item>
+    </style>
+    
 </resources>
