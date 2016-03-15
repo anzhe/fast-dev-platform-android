@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_base_backcolor"
+            android:orientation="vertical" >
+
+            <in.srain.cube.views.banner.SliderBanner
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/slider_banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:color/white"
+                android:visibility="gone"
+                app:slider_banner_indicator="@+id/slider_banner_indicator"
+                app:slider_banner_pager="@+id/slider_banner_pager" >
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/slider_banner_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <in.srain.cube.views.DotView
+                    android:id="@+id/slider_banner_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    app:dot_radius="4dp"
+                    app:dot_selected_color="0xff18b4ed"
+                    app:dot_span="8dp"
+                    app:dot_unselected_color="0xffffffff" />
+            </in.srain.cube.views.banner.SliderBanner>
+
+            <LinearLayout
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center" >
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line_bottom" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" >
+
+                <LinearLayout
+                    android:id="@+id/join_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingBottom="40dp"
+                    android:paddingTop="40dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/iv_01"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="12dp"
+                            android:src="@drawable/lawyer_home_join_img" />
+
+                        <TextView
+                            android:id="@+id/tv_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/iv_01"
+                            android:layout_toRightOf="@+id/iv_01"
+                            android:text="立即加盟"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/iv_01"
+                            android:layout_toRightOf="@+id/iv_01"
+                            android:text="共赢未来"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/tv_12"
+                            android:layout_toRightOf="@+id/iv_01"
+                            android:text="加盟合作"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/case_entrust_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingBottom="40dp"
+                    android:paddingTop="40dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/iv_02"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="12dp"
+                            android:src="@drawable/case_img" />
+
+                        <TextView
+                            android:id="@+id/tv_21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/iv_02"
+                            android:layout_toRightOf="@+id/iv_02"
+                            android:text="案件委托"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/iv_02"
+                            android:layout_toRightOf="@+id/iv_02"
+                            android:text="与你共享"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/tv_22"
+                            android:layout_toRightOf="@+id/iv_02"
+                            android:text="海量资源"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp" >
+
+                <LinearLayout
+                    android:id="@+id/consult_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingBottom="40dp"
+                    android:paddingTop="40dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/iv_03"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="12dp"
+                            android:src="@drawable/consult_img_02" />
+
+                        <TextView
+                            android:id="@+id/tv_31"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/iv_03"
+                            android:layout_toRightOf="@+id/iv_03"
+                            android:text="咨询广场"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/iv_03"
+                            android:layout_toRightOf="@+id/iv_03"
+                            android:text="专案定制"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/tv_32"
+                            android:layout_toRightOf="@+id/iv_03"
+                            android:text="专业解答"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/legal_aid_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingBottom="40dp"
+                    android:paddingTop="40dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/iv_04"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="12dp"
+                            android:src="@drawable/lawyer_home_aid_img" />
+
+                        <TextView
+                            android:id="@+id/tv_41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/iv_04"
+                            android:layout_toRightOf="@+id/iv_04"
+                            android:text="法律援助"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_42"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/iv_04"
+                            android:layout_toRightOf="@+id/iv_04"
+                            android:text="社会公德"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/tv_42"
+                            android:layout_toRightOf="@+id/iv_04"
+                            android:text="公益帮扶"
+                            android:textColor="@color/text_color_grey_dark_02"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

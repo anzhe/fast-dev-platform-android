@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cube_dotview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择您的擅长领域（" />
+
+        <TextView
+            android:id="@+id/skills_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="）" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line_bottom" />
+
+    <GridView
+        android:id="@+id/selected_skills_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="5dp"
+        android:numColumns="3"
+        android:padding="10dp"
+        android:stretchMode="columnWidth" />
+
+    <TextView
+        android:id="@+id/case_type_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/text_color_grey_normal"
+        android:padding="10dp"
+        android:text="刑事案件" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp" >
+
+        <in.srain.cube.views.DotView
+            android:id="@+id/dot_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            cube_dotview:dot_radius="3dp"
+            cube_dotview:dot_selected_color="0xFF377BEE"
+            cube_dotview:dot_span="18dp"
+            cube_dotview:dot_unselected_color="0xFFC5CEDB" />
+    </RelativeLayout>
+
+</LinearLayout>

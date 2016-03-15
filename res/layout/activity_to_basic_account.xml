@@ -1,0 +1,323 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:padding="10dp" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/payment_img_01" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现到对公账号"
+            android:textColor="@color/text_color_grey_dark_02"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line_bottom" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/app_base_backcolor" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="公司名称"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/corp_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入公司名称"
+                    android:maxLength="5"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="纳税人号"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/tax_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入纳税人号"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="地址"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入地址"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="联系电话"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/phone_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:digits="0123456789"
+                    android:hint="请输入联系电话"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="联系人"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/contacts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入联系人"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="开户银行"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/bank_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入开户银行"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="银行卡号"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/bank_card_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:digits="0123456789"
+                    android:hint="请输入银行卡号"
+                    android:inputType="phone"
+                    android:maxLength="18"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:text="提现金额"
+                    android:textColor="@color/text_color_grey_dark_02"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入提现金额"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/divider_line_bottom" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="提现说明："
+                android:textColor="@color/text_color_grey_dark_01"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="请完整填写您所任职的律师事务所的企业名称，开户行，企业银行账户。提交提现申请后，请您尽快安排您所在的律师事务所开具增值税发票，票据送达后我们将于3个工作日内完成对公转账。"
+                android:textColor="@color/text_color_grey_dark_01"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/button_color"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="提交"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/button_text_size" />
+
+</LinearLayout>

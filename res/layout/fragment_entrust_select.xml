@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_backcolor"
+    android:orientation="vertical" >
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/load_more_list_view_ptr_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <view.ptr.MyLoadMoreListViewContainer
+            android:id="@+id/load_more_list_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cube_mints_white" >
+
+            <ListView
+                android:id="@+id/load_more_small_image_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_base_backcolor"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:listSelector="@android:color/transparent"
+                android:padding="5dp"
+                android:scrollbarStyle="outsideOverlay" />
+        </view.ptr.MyLoadMoreListViewContainer>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+    <LinearLayout
+        android:id="@+id/lawyer_detail_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/common_lawyer_detail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <include layout="@layout/common_lawyer_detail" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/official_legal_team_detail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" >
+
+            <include layout="@layout/official_legal_team_detail" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@color/app_primary_color"
+                android:text="返回"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/button_text_size" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@color/app_primary_color"
+                android:text="选择律师"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

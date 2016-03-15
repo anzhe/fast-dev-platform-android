@@ -41,7 +41,7 @@ public class BootActivity extends BaseActivity {
 		setContentView(R.layout.activity_boot);
 
 		boot_pager = (ViewPager) findViewById(R.id.boot_pager);
-		boot_pager.setAdapter(new BootPagerAdapter(getFragmentManager()));
+		boot_pager.setAdapter(new BootPagerAdapter(getSupportFragmentManager()));
 		boot_pager.setOnPageChangeListener(new OnPageChangeListener() {
 			
 			@Override

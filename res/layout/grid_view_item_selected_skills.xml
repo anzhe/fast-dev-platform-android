@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_primary_color" >
+
+    <TextView
+        android:id="@+id/selected_skill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="入室抢劫"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/cancel" />
+
+</FrameLayout>

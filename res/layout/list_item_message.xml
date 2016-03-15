@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_bac"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/message" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="6dp" >
+
+            <TextView
+                android:id="@+id/msg_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="系统消息" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2015-07-29"
+                android:textColor="@color/text_color_grey_dark_01"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="3dp"
+            android:singleLine="true"
+            android:text="您已成功加盟法律APP，成为我们的一员！"
+            android:textColor="@color/text_color_grey_dark_01"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

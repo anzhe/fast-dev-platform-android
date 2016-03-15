@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="10dp"
+                    android:text="法定代理人"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/agent_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入法定代理人"
+                    android:maxLength="40"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="10dp"
+                    android:text="代理人单位"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/agent_org"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入代理人单位"
+                    android:maxLength="40"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="10dp"
+                    android:text="代理人电话"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/agent_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入代理人电话"
+                    android:inputType="phone"
+                    android:digits="0123456789"
+                    android:maxLength="11"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.2"
+                    android:gravity="right"
+                    android:paddingRight="10dp"
+                    android:text="案情和理由"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/argument"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/item_bac"
+                    android:drawableRight="@drawable/left_back_arrow"
+                    android:gravity="top"
+                    android:hint="请输入案情和理由"
+                    android:maxLength="200"
+                    android:minHeight="150dp"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="right|center_vertical"
+                    android:paddingRight="10dp"
+                    android:text="主要证据"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/evidence"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/item_bac"
+                    android:hint="请输入主要证据"
+                    android:maxLength="40"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="申请人住所地或户籍所在地的乡镇政府、街道办事处或申请人所在单位劳资、人事部门出具的申请人及家庭成员经济状况证明；（上传一份清晰扫描件，并将原件寄到君友公司指定收信处）\n申请人申明：本人的一切陈述以及提交的材料均为真实，否则，本人愿承担相应的法律责任。"
+                android:textColor="@color/text_color_grey_dark_02" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_primary_color"
+        android:text="提交"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/button_text_size" />
+
+</LinearLayout>

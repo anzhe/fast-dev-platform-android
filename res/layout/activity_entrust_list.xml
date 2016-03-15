@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:id="@+id/consult_search_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1E1E1"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/item_bac"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp" >
+
+            <ImageView
+                android:id="@+id/consult_tab1_iv"
+                android:layout_width="22dp"
+                android:layout_height="24dp"
+                android:background="@drawable/search_bac" />
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入关键词"
+                android:paddingLeft="15dp"
+                android:imeOptions="actionSearch"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="搜索"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:id="@+id/consult_tab1_ll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/consult_level" />
+
+            <TextView
+                android:id="@+id/consult_tab1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="案件类型"
+                android:textColor="@color/app_primary_color"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider_line_bottom" />
+
+        <LinearLayout
+            android:id="@+id/consult_tab2_ll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginBottom="1dp"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:id="@+id/consult_tab2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="地区选择"
+                android:textColor="@color/app_primary_color"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line_bottom" />
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/load_more_list_view_ptr_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <view.ptr.MyLoadMoreListViewContainer
+            android:id="@+id/load_more_list_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cube_mints_white" >
+
+            <ListView
+                android:id="@+id/load_more_small_image_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_base_backcolor"
+                android:divider="@null"
+                android:dividerHeight="10dp"
+                android:fadingEdge="none"
+                android:listSelector="@android:color/transparent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scrollbarStyle="outsideOverlay" />
+        </view.ptr.MyLoadMoreListViewContainer>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+</LinearLayout>

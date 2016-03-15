@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cube_mints_f1f1f1"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:id="@+id/consult_search_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1E1E1"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/item_bac"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp" >
+
+            <ImageView
+                android:id="@+id/consult_tab1_iv"
+                android:layout_width="22dp"
+                android:layout_height="24dp"
+                android:background="@drawable/search_bac" />
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入关键词"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="15dp"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="搜索"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/load_more_grid_view_ptr_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <view.ptr.MyLoadMoreGridViewContainer
+            android:id="@+id/load_more_grid_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cube_mints_white" >
+
+            <in.srain.cube.views.GridViewWithHeaderAndFooter
+                android:id="@+id/load_more_grid_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_base_backcolor"
+                android:fadingEdge="none"
+                android:focusable="false"
+                android:horizontalSpacing="12dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:clipToPadding="false"
+                android:padding="12dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="12dp" />
+        </view.ptr.MyLoadMoreGridViewContainer>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+</LinearLayout>

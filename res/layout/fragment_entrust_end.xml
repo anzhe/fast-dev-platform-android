@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_backcolor"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/lawyer_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp" >
+
+                <include layout="@layout/lawyer_info" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/official_lawyer_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:visibility="gone" >
+
+                <include layout="@layout/official_lawyer_info" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:text="联系方式"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/phone" />
+
+                    <TextView
+                        android:id="@+id/end_telephone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text_color_grey_dark_01"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/text_color_grey_light_01" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="15dp" >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/email" />
+
+                    <TextView
+                        android:id="@+id/end_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text_color_grey_dark_01"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@color/divider_line_bottom" />
+
+                <LinearLayout
+                    android:id="@+id/online_success_msg_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/online_success_msg_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已成功支付0元，委托已完成" />
+
+                    <TextView
+                        android:id="@+id/online_success_msg_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="请耐心等待律师进行委托服务！"
+                        android:textColor="@color/text_color_grey_dark_01" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/appoint_success_msg_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/appoint_success_msg_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已成功支付0元，委托已完成" />
+
+                    <TextView
+                        android:id="@+id/appoint_success_msg_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="请耐心等待律师进行委托服务！"
+                        android:textColor="@color/text_color_grey_dark_01" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/evaluate_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_base_backcolor"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider_line_top" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="15dp"
+                        android:text="评价信息" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="25dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="专业水平"
+                            android:textColor="@color/text_color_grey_dark_02" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/rate_star_11"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_12"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_13"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_14"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_15"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/rate_star_02" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="职业素养"
+                            android:textColor="@color/text_color_grey_dark_02" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/rate_star_21"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_22"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_23"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_24"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_25"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/rate_star_02" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="响应速度"
+                            android:textColor="@color/text_color_grey_dark_02" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/rate_star_31"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_32"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_33"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_34"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_35"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/rate_star_02" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="总体评价"
+                            android:textColor="@color/text_color_grey_dark_02" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/rate_star_41"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_42"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_43"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_44"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="2dp"
+                                android:src="@drawable/rate_star_02" />
+
+                            <ImageView
+                                android:id="@+id/rate_star_45"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/rate_star_02" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider_line_bottom" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/btn_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_reselect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/app_primary_color"
+            android:text="重选律师"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <View
+            android:id="@+id/divider_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@color/app_primary_color"
+            android:text="评价律师"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_contact_cs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_primary_color"
+        android:text="联系客服"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/button_text_size"
+        android:visibility="gone" />
+
+</LinearLayout>
