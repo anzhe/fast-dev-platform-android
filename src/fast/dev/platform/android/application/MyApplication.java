@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.tencent.bugly.crashreport.CrashReport;
+import com.testin.agent.TestinAgent;
+import com.umeng.socialize.common.SocializeConstants;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -11,6 +13,7 @@ import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import fast.dev.platform.android.constant.CommonData;
 import fast.dev.platform.android.constant.Constants;
 import fast.dev.platform.android.util.CommonUtils;
 
@@ -25,7 +28,21 @@ public class MyApplication extends Application {
 		
 		app = this;
 		
+		/**
+		 * 友盟
+		 */
+		SocializeConstants.APPKEY = CommonData.UMENG_APP_KEY;
+		
+		/**
+		 * Bugly
+		 */
 		CrashReport.initCrashReport(getApplicationContext(), Constants.BUGLY_APP_ID, true);
+		
+		/**
+		 * 云测Testin
+		 */
+		TestinAgent.init(this, CommonData.TESTIN_APP_KEY);
+		TestinAgent.setLocalDebug(true);
 	}
 	
 	public static MyApplication getInstance() {

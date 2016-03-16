@@ -107,8 +107,8 @@ public class BootActivity extends BaseActivity {
 					@Override
 					public void onClick(View v) {
 						sys_sp.edit().putBoolean("been_booted", true).apply();
-						startActivity(new Intent(getContext(), LoginActivity.class));
 						finish();
+						startActivity(new Intent(getContext(), LoginActivity.class));
 					}
 
 				});

@@ -24,10 +24,20 @@
     <application
         android:name="fast.dev.platform.android.application.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/app_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="fast-dev-platform.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="fast.dev.platform.android.model.User,fast.dev.platform.android.model.BrowsingHistory" />
+        
         <!-- 定位需要的服务 -->
         <service android:name="com.amap.api.location.APSService" />
 

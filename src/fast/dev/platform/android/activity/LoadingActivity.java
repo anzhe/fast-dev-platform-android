@@ -77,7 +77,7 @@ public class LoadingActivity extends BaseActivity {
 				
 				@Override
 				public void run() {
-					
+					checkLogin();
 				}
 				
 			}, time);
@@ -86,8 +86,8 @@ public class LoadingActivity extends BaseActivity {
 				
 				@Override
 				public void run() {
-					startActivity(new Intent(getContext(), LoginActivity.class));
 					finish();
+					startActivity(new Intent(getContext(), LoginActivity.class));
 				}
 				
 			}, 2000);
@@ -112,17 +112,18 @@ public class LoadingActivity extends BaseActivity {
 						
 						@Override
 						public void doCallback() {
-							
+							finish();
+							startActivity(new Intent(getContext(), MainActivity.class));
 						}
 						
 					});
 				} else {// 用户数据被删除则跳转到登录页面重新登录
-					startActivity(new Intent(getContext(), LoginActivity.class));
 					finish();
+					startActivity(new Intent(getContext(), LoginActivity.class));
 				}
 			} else {
-				startActivity(new Intent(getContext(), LoginActivity.class));
 				finish();
+				startActivity(new Intent(getContext(), LoginActivity.class));
 			}
 		}
 		
