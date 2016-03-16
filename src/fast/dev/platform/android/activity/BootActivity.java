@@ -36,7 +36,7 @@ public class BootActivity extends BaseActivity {
 		/**
 		 * Bugly
 		 */
-		CrashReport.setUserSceneTag(getContext(), 6119);
+		CrashReport.setUserSceneTag(getContext(), 11891);
 		
 		setContentView(R.layout.activity_boot);
 

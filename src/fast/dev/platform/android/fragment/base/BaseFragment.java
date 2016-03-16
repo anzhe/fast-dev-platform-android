@@ -21,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import fast.dev.platform.android.R;
 import fast.dev.platform.android.bean.base.BaseBusinessBean;
-import fast.dev.platform.android.database.CaseTypeDBService;
 import fast.dev.platform.android.http.volley.VolleyWrapper;
 import fast.dev.platform.android.imageloader.PicassoImageLoader;
 import fast.dev.platform.android.util.CommonUtils;
@@ -45,9 +44,6 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 	protected TextView title_right_tv;
 	protected LinearLayout title_right_clk;
 	
-	// 字典表数据库
-	protected CaseTypeDBService caseTypeDBService;
-
 	protected PicassoImageLoader mImageLoader;// 图片加载器-Picasso
 
 	public Context getContext() {
@@ -57,8 +53,6 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		caseTypeDBService = new CaseTypeDBService(getActivity());
 		
 		mImageLoader = new PicassoImageLoader(getContext());
 		
@@ -104,7 +98,7 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 		
 		title_right_clk.setOnClickListener(this);
 	}
-	
+
 	/**
 	 * 处理请求的返回信息
 	 * 
@@ -128,32 +122,6 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 	 */
 	public boolean handleRequestResult(BaseBusinessBean businessBean, boolean hideErrorInfo, boolean showDefaultErrorInfo, String customMsg) {
 		return CommonUtils.handleRequestResult(getContext(), businessBean, hideErrorInfo, showDefaultErrorInfo, customMsg);
-	}
-
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.title_left_clk:
-			setTitleLeftButtonAction(v);
-			break;
-		case R.id.title_right_clk:
-			setTitleRightButtonAction(v);
-			break;
-		}
-	}
-
-	/**
-	 * 设置标题栏左侧返回按钮所执行的动作，子类可覆写该方法
-	 */
-	protected void setTitleLeftButtonAction(View v) {
-		getActivity().finish();
-	}
-	
-	/**
-	 * 设置标题栏右侧按钮所执行的动作，子类可覆写该方法
-	 */
-	protected void setTitleRightButtonAction(View v) {
-		
 	}
 	
 	/**

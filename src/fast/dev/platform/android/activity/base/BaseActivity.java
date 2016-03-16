@@ -16,12 +16,9 @@ import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import fast.dev.platform.android.R;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.bean.base.BaseBusinessBean;
-import fast.dev.platform.android.database.CaseTypeDBService;
 import fast.dev.platform.android.http.volley.VolleyWrapper;
 import fast.dev.platform.android.imageloader.PicassoImageLoader;
 import fast.dev.platform.android.util.CommonUtils;
@@ -38,15 +35,6 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 	protected SharedPreferences sys_sp;// 系统信息数据库
 	protected SharedPreferences location_sp;// 定位信息数据库
 	
-	protected LinearLayout title_left_clk;
-	protected TextView title_bar_left_back_text;
-	protected TextView title_middle_tv;
-	protected TextView title_right_tv;
-	protected LinearLayout title_right_clk;
-	
-	// 字典表数据库
-	protected CaseTypeDBService caseTypeDBService;
-	
 	protected PicassoImageLoader mImageLoader;// 图片加载器-Picasso
 
 	public Context getContext() {
@@ -58,7 +46,6 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 		super.onCreate(savedInstanceState);
 
 		MyApplication.getInstance().addActivity(this);
-		caseTypeDBService = new CaseTypeDBService(this);
 		
 		mImageLoader = new PicassoImageLoader(getContext());
 		
@@ -70,37 +57,6 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 		volleyWrapper = new VolleyWrapper(getContext());
 	}
 
-	protected void setTitleBar() {
-		setTitleBar(null);
-	}
-	
-	protected void setTitleBar(String title) {
-		setTitleBar(title, null);
-	}
-	
-	protected void setTitleBar(String title, String right_text) {
-		title_left_clk = (LinearLayout) findViewById(R.id.title_left_clk);
-		title_bar_left_back_text = (TextView) findViewById(R.id.back_text);
-		title_middle_tv = (TextView) findViewById(R.id.title_middle_tv);
-		title_right_clk = (LinearLayout) findViewById(R.id.title_right_clk);
-		title_right_tv = (TextView) findViewById(R.id.title_right_tv);
-		title_middle_tv.setText(title);
-		title_right_tv.setText(right_text);
-		
-		if (right_text != null) {
-			title_right_clk.setOnClickListener(this);
-		}
-		
-		title_left_clk.setOnClickListener(this);
-	}
-	
-	/**
-	 * 隐藏标题栏返回文本
-	 */
-	protected void hideTitleBarLeftBackText() {
-		title_bar_left_back_text.setVisibility(View.GONE);
-	}
-	
 	/**
 	 * 处理请求的返回信息
 	 * 
