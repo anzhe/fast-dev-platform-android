@@ -24,8 +24,6 @@ import fast.dev.platform.android.bean.base.BaseBusinessBean;
 import fast.dev.platform.android.database.CaseTypeDBService;
 import fast.dev.platform.android.http.volley.VolleyWrapper;
 import fast.dev.platform.android.imageloader.PicassoImageLoader;
-import fast.dev.platform.android.location.BaiduRequestLocation;
-import fast.dev.platform.android.location.BaiduRequestLocation.LocationListener;
 import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.ToastUtils;
 
@@ -50,8 +48,6 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 	// 字典表数据库
 	protected CaseTypeDBService caseTypeDBService;
 
-	private BaiduRequestLocation mBaiduRequestLocation;// 请求定位-百度地图
-	
 	protected PicassoImageLoader mImageLoader;// 图片加载器-Picasso
 
 	public Context getContext() {
@@ -63,8 +59,6 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 		super.onCreate(savedInstanceState);
 		
 		caseTypeDBService = new CaseTypeDBService(getActivity());
-		
-		mBaiduRequestLocation = new BaiduRequestLocation(getContext());
 		
 		mImageLoader = new PicassoImageLoader(getContext());
 		
@@ -111,22 +105,6 @@ public abstract class BaseFragment extends Fragment implements OnClickListener, 
 		title_right_clk.setOnClickListener(this);
 	}
 	
-	@Override
-	public void onStop() {
-		super.onStop();
-		
-		//mBaiduRequestLocation.cancelLocation();// 取消定位
-	}
-	
-	/**
-	 * 开始定位
-	 * 
-	 * @param locationListener
-	 */
-	public void location(LocationListener locationListener) {
-		mBaiduRequestLocation.location(locationListener);
-	}
-
 	/**
 	 * 处理请求的返回信息
 	 * 
