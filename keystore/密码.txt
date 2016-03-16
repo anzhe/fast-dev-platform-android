@@ -1,0 +1,2 @@
+别名：fast-dev-platform
+密码：123456
