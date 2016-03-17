@@ -52,7 +52,6 @@ public class FindFragment extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View root = inflater.inflate(R.layout.fragment_find, container, false);
-		setTitleBar(root, "发现", true);
 
 		initViews(root);
 		initData();

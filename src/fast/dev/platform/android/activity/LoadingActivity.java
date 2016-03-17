@@ -103,24 +103,27 @@ public class LoadingActivity extends BaseActivity {
 			finish();
 		} else {
 			if (user_sp.getBoolean("logged_on", false)) {
-				final User user = new Select().from(User.class).where("Account=?", user_sp.getString("account", "")).executeSingle();
-				if (user != null) {
-					HashMap<String, String> loginParams = new HashMap<String, String>();
-					loginParams.put("account", user.account);
-					loginParams.put("password", user.password);
-					accountService.login(false, loginParams, user.role, new LoginCallback() {
-						
-						@Override
-						public void doCallback() {
-							finish();
-							startActivity(new Intent(getContext(), MainActivity.class));
-						}
-						
-					});
-				} else {// 用户数据被删除则跳转到登录页面重新登录
-					finish();
-					startActivity(new Intent(getContext(), LoginActivity.class));
-				}
+				finishActivity();
+				startActivity(new Intent(getContext(), MainActivity.class));
+				
+//				final User user = new Select().from(User.class).where("Account=?", user_sp.getString("account", "")).executeSingle();
+//				if (user != null) {
+//					HashMap<String, String> loginParams = new HashMap<String, String>();
+//					loginParams.put("account", user.account);
+//					loginParams.put("password", user.password);
+//					accountService.login(false, loginParams, user.role, new LoginCallback() {
+//						
+//						@Override
+//						public void doCallback() {
+//							finish();
+//							startActivity(new Intent(getContext(), MainActivity.class));
+//						}
+//						
+//					});
+//				} else {// 用户数据被删除则跳转到登录页面重新登录
+//					finish();
+//					startActivity(new Intent(getContext(), LoginActivity.class));
+//				}
 			} else {
 				finish();
 				startActivity(new Intent(getContext(), LoginActivity.class));

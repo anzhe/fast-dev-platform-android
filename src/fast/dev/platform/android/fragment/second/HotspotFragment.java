@@ -36,7 +36,6 @@ public class HotspotFragment extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View root = inflater.inflate(R.layout.fragment_hotspot, container, false);
-		setTitleBar(root, "热门", "案件类型", true);
 		
 		initData();
 		initViews(root);

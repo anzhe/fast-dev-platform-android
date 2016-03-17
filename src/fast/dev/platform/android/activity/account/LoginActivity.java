@@ -47,7 +47,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import fast.dev.platform.android.R;
-import fast.dev.platform.android.activity.base.BaseActivity;
+import fast.dev.platform.android.activity.MainActivity;
+import fast.dev.platform.android.activity.base.BaseActionBarActivity;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.bean.LoginBean;
 import fast.dev.platform.android.broadcastreceiver.NetworkChangeBroadcastReceiver;
@@ -57,12 +58,11 @@ import fast.dev.platform.android.business.AccountService.ThirdLoginCallback;
 import fast.dev.platform.android.constant.Constants;
 import fast.dev.platform.android.model.User;
 import fast.dev.platform.android.util.CommonUtils;
-import fast.dev.platform.android.util.MD5Utils;
 import fast.dev.platform.android.util.NetworkUtils;
 import fast.dev.platform.android.util.ThirdPartyUtils;
 import fast.dev.platform.android.util.ToastUtils;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActionBarActivity {
 
 	private static final String TAG = LoginActivity.class.getSimpleName();
 	
@@ -466,11 +466,6 @@ public class LoginActivity extends BaseActivity {
 			
 		});
 	}
-
-	@Override
-	protected void setTitleLeftButtonAction(View v) {
-		MyApplication.getInstance().exit();
-	}
 	
 	@Override
 	public void onClick(View v) {
@@ -513,17 +508,25 @@ public class LoginActivity extends BaseActivity {
 				return;
 			}
 			CommonUtils.showLoadingProgressDialog(getContext());
-			HashMap<String, String> loginParams = new HashMap<String, String>();
-			loginParams.put("account", up_Username);
-			loginParams.put("password", MD5Utils.toMD5(up_Password));
-			int user_type = lawyerRb.isChecked() ? 1 : 0;
-			accountService.login(false, loginParams, user_type, new LoginCallback() {
-
-				@Override
-				public void doCallback() {
-				}
-
-			});
+			
+			finishActivity();
+			startActivity(new Intent(getContext(), MainActivity.class));
+			
+			user_sp.edit().putBoolean("logged_on", true).apply();
+			
+//			HashMap<String, String> loginParams = new HashMap<String, String>();
+//			loginParams.put("account", up_Username);
+//			loginParams.put("password", MD5Utils.toMD5(up_Password));
+//			int user_type = lawyerRb.isChecked() ? 1 : 0;
+//			accountService.login(false, loginParams, user_type, new LoginCallback() {
+//
+//				@Override
+//				public void doCallback() {
+//					
+//				}
+//
+//			});
+			
 			break;
 		case R.id.btn_register:
 			startActivity(new Intent(getContext(), RegisterActivity.class));

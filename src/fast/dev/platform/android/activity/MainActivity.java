@@ -22,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import fast.dev.platform.android.R;
-import fast.dev.platform.android.activity.base.BaseActivity;
+import fast.dev.platform.android.activity.base.BaseActionBarActivity;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.broadcastreceiver.NetworkChangeBroadcastReceiver;
 import fast.dev.platform.android.constant.CommonData;
@@ -36,7 +36,7 @@ import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.NetworkUtils;
 import fast.dev.platform.android.util.ToastUtils;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActionBarActivity {
 
 	private LinearLayout view1, view2, view3, view4;
 	private TextView home_tv1, home_tv2, home_tv3, home_tv4;

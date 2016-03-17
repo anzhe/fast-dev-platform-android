@@ -84,28 +84,6 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.title_left_clk:
-			setTitleLeftButtonAction(v);
-			break;
-		case R.id.title_right_clk:
-			setTitleRightButtonAction(v);
-			break;
-		}
-	}
-
-	/**
-	 * 设置标题栏左侧返回按钮所执行的动作，子类可覆写该方法
-	 */
-	protected void setTitleLeftButtonAction(View v) {
-		this.finish();
-		MyApplication.getInstance().removeLatestActivity();
-	}
-	
-	/**
-	 * 设置标题栏右侧按钮所执行的动作，子类可覆写该方法
-	 */
-	protected void setTitleRightButtonAction(View v) {
 		
 	}
 	
