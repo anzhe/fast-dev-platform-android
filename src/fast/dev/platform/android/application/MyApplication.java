@@ -3,6 +3,7 @@ package fast.dev.platform.android.application;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.activeandroid.app.Application;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.testin.agent.TestinAgent;
 import com.umeng.socialize.common.SocializeConstants;
@@ -10,7 +11,6 @@ import com.umeng.socialize.common.SocializeConstants;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import fast.dev.platform.android.constant.CommonData;
