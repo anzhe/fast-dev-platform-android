@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import fast.dev.platform.android.R;
+import fast.dev.platform.android.activity.SettingsActivity;
 import fast.dev.platform.android.activity.account.ProfileActivity;
 import fast.dev.platform.android.fragment.base.BaseFragment;
 import fast.dev.platform.android.util.CommonUtils;
@@ -85,7 +86,7 @@ public class MyFragment extends BaseFragment {
 		msg_container = rootView.findViewById(R.id.msg_container);
 		msg_count = (TextView) rootView.findViewById(R.id.msg_count);
 		my_consult = (LinearLayout) rootView.findViewById(R.id.my_consult);
-		my_set = (LinearLayout) rootView.findViewById(R.id.my_set);
+		my_set = (LinearLayout) rootView.findViewById(R.id.settings);
 		my_thing = (LinearLayout) rootView.findViewById(R.id.my_thing);
 		my_message = (LinearLayout) rootView.findViewById(R.id.my_message);
 		my_account = (LinearLayout) rootView.findViewById(R.id.my_account);
@@ -123,56 +124,14 @@ public class MyFragment extends BaseFragment {
 	}
 
 	@Override
-	public void onClick(View v) {/*
+	public void onClick(View v) {
 		Intent intent = null;
 		switch (v.getId()) {
-		case R.id.my_consult:
-			intent = new Intent(getContext(), MyConsultActivity.class);
-			startActivity(intent);
-			break;
-		case R.id.my_set:
+		case R.id.settings:
 			intent = new Intent(getContext(), SettingsActivity.class);
 			startActivity(intent);
 			break;
-		case R.id.my_message:
-			intent = new Intent(getContext(), MessageActivity.class);
-			startActivity(intent);
-			break;
-		case R.id.my_account:
-			if (CommonUtils.isLawyer(user_sp)) {
-				intent = new Intent(getContext(), LawyerAccountActivity.class);
-			} else {
-				intent = new Intent(getContext(), UserAccountActivity.class);
-			}
-			startActivity(intent);
-			break;
-		case R.id.my_thing:
-			if (CommonUtils.isLawyer(user_sp)) {
-				intent = new Intent(getContext(), MyCaseEntrustActivty.class);
-			} else if (CommonUtils.isUser(user_sp)) {
-				intent = new Intent(getContext(), MyBusinessActivity.class);
-			}
-			startActivity(intent);
-			break;
-		case R.id.my_focus:
-			Intent intent1 = new Intent(getContext(), MyFocusActivity.class);
-			if (CommonUtils.isLawyer(user_sp)) {
-				intent1.putExtra("lawyerid", Long.parseLong(user_sp.getString("lawyerid", "-1")));
-			} else {
-				intent1.putExtra("userid", Long.parseLong(user_sp.getString("userid", "-1")));
-			}
-			startActivity(intent1);
-			break;
-		case R.id.my_fans:
-			Intent intent2 = new Intent(getContext(), MyFansActivity.class);
-			if (CommonUtils.isLawyer(user_sp)) {
-				intent2.putExtra("lawyerid", Long.parseLong(user_sp.getString("lawyerid", "-1")));
-			} else {
-				intent2.putExtra("userid", Long.parseLong(user_sp.getString("userid", "-1")));
-			}
-			startActivity(intent2);
-			break;
 		}
-	*/}
+	}
 
 }

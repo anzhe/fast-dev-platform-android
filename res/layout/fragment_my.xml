@@ -252,7 +252,7 @@
                 android:background="@color/divider_line_top" />
 
             <LinearLayout
-                android:id="@+id/my_set"
+                android:id="@+id/settings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"

@@ -60,7 +60,7 @@
         </activity>
         <activity
             android:name="fast.dev.platform.android.activity.account.LoginActivity"
-            android:label="@string/login_text"
+            android:theme="@style/MyTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity android:name="fast.dev.platform.android.activity.account.ProfileActivity" >
@@ -69,6 +69,7 @@
         </activity>
         <activity android:name="fast.dev.platform.android.activity.account.ModifyPasswordActivity" >
         </activity>
+        <activity android:name="fast.dev.platform.android.activity.SettingsActivity"></activity>
     </application>
 
 </manifest>

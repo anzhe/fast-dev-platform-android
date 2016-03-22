@@ -60,4 +60,9 @@
         <!-- <item name="android:windowBackground">@drawable/loading_img_yingyongbao</item> -->
     </style>
     
+    <style name="MyTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorAccent">#512DA8</item>
+    </style>
+    
 </resources>
