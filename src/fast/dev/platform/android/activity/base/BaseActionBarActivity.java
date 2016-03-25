@@ -8,7 +8,7 @@ public class BaseActionBarActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		getActionBar().setDisplayShowHomeEnabled(false);
+//		getActionBar().setDisplayShowHomeEnabled(false);
 	}
 	
 }

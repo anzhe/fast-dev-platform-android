@@ -12,11 +12,10 @@ import com.testin.agent.TestinAgent;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import fast.dev.platform.android.R;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.bean.base.BaseBusinessBean;
 import fast.dev.platform.android.http.volley.VolleyWrapper;
@@ -24,7 +23,7 @@ import fast.dev.platform.android.imageloader.PicassoImageLoader;
 import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.ToastUtils;
 
-public abstract class BaseActivity extends FragmentActivity implements OnClickListener, ErrorListener {
+public abstract class BaseActivity extends AppCompatActivity implements OnClickListener, ErrorListener {
 
 	protected Gson gson = new Gson();
 	

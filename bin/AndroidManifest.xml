@@ -52,6 +52,7 @@
         </activity>
         <activity
             android:name="fast.dev.platform.android.activity.MainActivity"
+            android:theme="@style/MyTheme.NoActionBar.Light"
             android:label="@string/home_text" >
         </activity>
         <activity
@@ -60,7 +61,8 @@
         </activity>
         <activity
             android:name="fast.dev.platform.android.activity.account.LoginActivity"
-            android:theme="@style/MyTheme.NoActionBar"
+            android:label="@string/login_text"
+            android:theme="@style/MyTheme.NoActionBar.Light.Translucent"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity android:name="fast.dev.platform.android.activity.account.ProfileActivity" >
@@ -69,7 +71,9 @@
         </activity>
         <activity android:name="fast.dev.platform.android.activity.account.ModifyPasswordActivity" >
         </activity>
-        <activity android:name="fast.dev.platform.android.activity.SettingsActivity"></activity>
+        <activity android:name="fast.dev.platform.android.activity.SettingsActivity"
+            android:theme="@style/MyTheme.NoActionBar.Light" >
+        </activity>
     </application>
 
 </manifest>

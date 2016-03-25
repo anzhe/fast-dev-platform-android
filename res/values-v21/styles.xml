@@ -5,12 +5,59 @@
         AppBaseTheme from BOTH res/values/styles.xml and
         res/values-v11/styles.xml on API 14+ devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->
         
     </style>
     
-	<style name="MyTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+	<style name="MyTheme.ActionBar" parent="Theme.AppCompat">
+	    <!-- <item name="colorPrimary">#673AB7</item> -->
+	    <item name="colorAccent">#FF4081</item>
+	</style>
+    
+    <style name="MyTheme.ActionBar.Light" parent="Theme.AppCompat.Light">
+	    <!-- <item name="colorPrimary">#673AB7</item> -->
+	    <item name="colorAccent">#FF4081</item>
+	</style>
+    
+    <style name="MyTheme.ActionBar.Translucent" parent="Theme.AppCompat">
+	    <!-- <item name="colorPrimary">#673AB7</item> -->
+	    <item name="colorAccent">#FF4081</item>
+	    <item name="android:windowTranslucentStatus">true</item>  
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+	</style>
+    
+    <style name="MyTheme.ActionBar.Light.Translucent" parent="Theme.AppCompat.Light">
+	    <!-- <item name="colorPrimary">#673AB7</item> -->
+	    <item name="colorAccent">#FF4081</item>
+	    <item name="android:windowTranslucentStatus">true</item>  
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+	</style>
+    
+    <style name="MyTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
+	    <item name="colorPrimary">#673AB7</item>
+	    <item name="colorAccent">#FF4081</item>
+	</style>
+    
+    <style name="MyTheme.NoActionBar.Light" parent="Theme.AppCompat.Light.NoActionBar">
+	    <item name="colorPrimary">#673AB7</item>
+	    <item name="colorAccent">#FF4081</item>
+	</style>
+    
+	<style name="MyTheme.NoActionBar.Translucent" parent="Theme.AppCompat.NoActionBar">
+	    <item name="colorPrimary">#673AB7</item>
+	    <item name="colorAccent">#FF4081</item>
+	    <item name="android:windowTranslucentStatus">true</item>  
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+	</style>
+	
+	<style name="MyTheme.NoActionBar.Light.Translucent" parent="Theme.AppCompat.Light.NoActionBar">
 	    <item name="colorPrimary">#673AB7</item>
 	    <item name="colorAccent">#FF4081</item>
 	    <item name="android:windowTranslucentStatus">true</item>  

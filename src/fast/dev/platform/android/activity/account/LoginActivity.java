@@ -48,7 +48,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import fast.dev.platform.android.R;
 import fast.dev.platform.android.activity.MainActivity;
-import fast.dev.platform.android.activity.base.BaseActionBarActivity;
+import fast.dev.platform.android.activity.base.BaseActivity;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.bean.LoginBean;
 import fast.dev.platform.android.broadcastreceiver.NetworkChangeBroadcastReceiver;
@@ -62,7 +62,7 @@ import fast.dev.platform.android.util.NetworkUtils;
 import fast.dev.platform.android.util.ThirdPartyUtils;
 import fast.dev.platform.android.util.ToastUtils;
 
-public class LoginActivity extends BaseActionBarActivity {
+public class LoginActivity extends BaseActivity {
 
 	private static final String TAG = LoginActivity.class.getSimpleName();
 	

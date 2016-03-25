@@ -36,13 +36,13 @@ public class MyApplication extends Application {
 		/**
 		 * Bugly
 		 */
-		CrashReport.initCrashReport(getApplicationContext(), Constants.BUGLY_APP_ID, true);
+		CrashReport.initCrashReport(getApplicationContext(), Constants.BUGLY_APP_ID, false);
 		
 		/**
 		 * 云测Testin
 		 */
 		TestinAgent.init(this, CommonData.TESTIN_APP_KEY);
-		TestinAgent.setLocalDebug(true);
+		TestinAgent.setLocalDebug(false);
 	}
 	
 	public static MyApplication getInstance() {
