@@ -13,7 +13,7 @@ public class RegisterActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_register_step_03);
 		
 		CrashReport.setUserSceneTag(getContext(), 11888);
 	}

@@ -32,6 +32,7 @@ import fast.dev.platform.android.activity.base.BaseActivity;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.constant.CommonData;
 import fast.dev.platform.android.constant.Constants;
+import fast.dev.platform.android.fragment.MainFragment;
 import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.DeviceInfoUtils;
 import fast.dev.platform.android.util.ThirdPartyUtils;
@@ -147,7 +148,7 @@ public class SettingsActivity extends BaseActivity {
 							Intent intent = new Intent(getContext(), LoginActivity.class);
 							startActivity(intent);
 							
-							MainActivity.currentPageIndex = 0;
+							MainFragment.currentPageIndex = 0;
 						}
 
 					}).setNegativeButton("取消", null).show();

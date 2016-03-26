@@ -1,21 +1,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light"></style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
+    <style name="AppTheme" parent="AppBaseTheme"></style>
 
     <style name="SmallRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/smallrating_bac</item>
@@ -47,55 +34,59 @@
         <!-- <item name="android:background">@drawable/nav_page</item> -->
         <item name="android:background">@color/navpage</item>
     </style>
-    
+
     <style name="MyTheme.FullscreenAppTheme" parent="AppTheme">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
     </style>
-    
+
     <style name="MyTheme.LoadingPage" parent="MyTheme.FullscreenAppTheme">
         <item name="android:windowBackground">@drawable/loading_img</item>
     </style>
-    
+
     <style name="MyTheme.ActionBar" parent="Theme.AppCompat">
-	    <!-- <item name="colorPrimary">#673AB7</item> -->
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
     <style name="MyTheme.ActionBar.Light" parent="Theme.AppCompat.Light">
-	    <!-- <item name="colorPrimary">#673AB7</item> -->
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
     <style name="MyTheme.ActionBar.Translucent" parent="Theme.AppCompat">
-	    <!-- <item name="colorPrimary">#673AB7</item> -->
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
     <style name="MyTheme.ActionBar.Light.Translucent" parent="Theme.AppCompat.Light">
-	    <!-- <item name="colorPrimary">#673AB7</item> -->
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
     <style name="MyTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
-	    <item name="colorPrimary">#673AB7</item>
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
     <style name="MyTheme.NoActionBar.Light" parent="Theme.AppCompat.Light.NoActionBar">
-	    <item name="colorPrimary">#673AB7</item>
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
-	<style name="MyTheme.NoActionBar.Translucent" parent="Theme.AppCompat.NoActionBar">
-	    <item name="colorPrimary">#673AB7</item>
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-	
-	<style name="MyTheme.NoActionBar.Light.Translucent" parent="Theme.AppCompat.Light.NoActionBar">
-	    <item name="colorPrimary">#673AB7</item>
-	    <item name="colorAccent">#FF4081</item>
-	</style>
-    
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="MyTheme.NoActionBar.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="MyTheme.NoActionBar.Light.Translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
 </resources>

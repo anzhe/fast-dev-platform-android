@@ -52,8 +52,8 @@
         </activity>
         <activity
             android:name="fast.dev.platform.android.activity.MainActivity"
-            android:theme="@style/MyTheme.NoActionBar.Light"
-            android:label="@string/home_text" >
+            android:label="@string/home_text"
+            android:theme="@style/MyTheme.NoActionBar.Light" >
         </activity>
         <activity
             android:name="fast.dev.platform.android.activity.BootActivity"
@@ -71,8 +71,17 @@
         </activity>
         <activity android:name="fast.dev.platform.android.activity.account.ModifyPasswordActivity" >
         </activity>
-        <activity android:name="fast.dev.platform.android.activity.SettingsActivity"
+        <activity
+            android:name="fast.dev.platform.android.activity.SettingsActivity"
             android:theme="@style/MyTheme.NoActionBar.Light" >
+        </activity>
+        <activity
+            android:name=".activity.CheeseDetailActivity"
+            android:theme="@style/MyTheme.NoActionBar.Light"
+            android:parentActivityName=".activity.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
         </activity>
     </application>
 

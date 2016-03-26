@@ -14,13 +14,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import fast.dev.platform.android.activity.MainActivity;
 import fast.dev.platform.android.activity.account.LoginActivity;
 import fast.dev.platform.android.activity.account.RegisterActivity;
 import fast.dev.platform.android.bean.LoginBean;
 import fast.dev.platform.android.bean.business.LoginBussniseBean;
 import fast.dev.platform.android.bean.business.ThirdPartyLoginBussniseBean;
 import fast.dev.platform.android.constant.CommonData;
+import fast.dev.platform.android.fragment.MainFragment;
 import fast.dev.platform.android.http.volley.VolleyWrapper;
 import fast.dev.platform.android.model.User;
 import fast.dev.platform.android.util.CommonUtils;
@@ -79,7 +79,7 @@ public class AccountService implements ErrorListener {
 					if (callback != null) {
 						callback.doCallback();
 					} else {
-						mContext.startActivity(new Intent(mContext, MainActivity.class));
+						mContext.startActivity(new Intent(mContext, MainFragment.class));
 						((Activity) mContext).finish();
 					}
 				} else {

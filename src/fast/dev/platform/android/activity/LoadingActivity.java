@@ -1,8 +1,5 @@
 package fast.dev.platform.android.activity;
 
-import java.util.HashMap;
-
-import com.activeandroid.query.Select;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.testin.agent.TestinAgent;
 
@@ -14,8 +11,6 @@ import fast.dev.platform.android.R;
 import fast.dev.platform.android.activity.account.LoginActivity;
 import fast.dev.platform.android.activity.base.BaseActivity;
 import fast.dev.platform.android.business.AccountService;
-import fast.dev.platform.android.business.AccountService.LoginCallback;
-import fast.dev.platform.android.model.User;
 import fast.dev.platform.android.util.BrowsingHistoryUtils;
 import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.NetworkUtils;
