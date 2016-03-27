@@ -1,6 +1,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light"></style>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">#512DA8</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
 
     <style name="AppTheme" parent="AppBaseTheme"></style>
 
@@ -68,6 +72,7 @@
 
     <style name="MyTheme.NoActionBar.Light" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">#512DA8</item>
         <item name="colorAccent">#FF4081</item>
     </style>
 
