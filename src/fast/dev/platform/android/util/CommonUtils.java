@@ -23,7 +23,7 @@ import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import fast.dev.platform.android.activity.account.LoginActivity;
+import fast.dev.platform.android.activity.account.Login111Activity;
 import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.bean.LoginBean;
 import fast.dev.platform.android.bean.base.BaseBusinessBean;
@@ -268,7 +268,7 @@ public class CommonUtils {
 			ToastUtils.showShort(context, baseBean.getResultdesc());
 		}
 		user_sp(context).edit().clear().apply();
-		Intent intent = new Intent(context, LoginActivity.class);
+		Intent intent = new Intent(context, Login111Activity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		context.startActivity(intent);
 		((Activity) context).finish();

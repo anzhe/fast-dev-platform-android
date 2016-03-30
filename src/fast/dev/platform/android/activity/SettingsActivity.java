@@ -25,7 +25,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import fast.dev.platform.android.R;
-import fast.dev.platform.android.activity.account.LoginActivity;
+import fast.dev.platform.android.activity.account.Login111Activity;
 import fast.dev.platform.android.activity.account.ModifyPasswordActivity;
 import fast.dev.platform.android.activity.account.ProfileActivity;
 import fast.dev.platform.android.activity.base.BaseActivity;
@@ -145,7 +145,7 @@ public class SettingsActivity extends BaseActivity {
 							user_sp.edit().clear().apply();
 							MyApplication.getInstance().exit();
 
-							Intent intent = new Intent(getContext(), LoginActivity.class);
+							Intent intent = new Intent(getContext(), Login111Activity.class);
 							startActivity(intent);
 							
 							MainFragment.currentPageIndex = 0;

@@ -33,7 +33,8 @@ public class PicassoImageLoader {
 
 	public void displayImageForAvatar(String uri, ImageView imageView) {
 		if (!TextUtils.isEmpty(uri)) {
-			Picasso.with(mContext).load(uri).placeholder(R.drawable.no_avatar).error(R.drawable.no_avatar).into(imageView);
+			Picasso.with(mContext).load(uri).placeholder(R.drawable.no_avatar).error(R.drawable.no_avatar)
+					.into(imageView);
 		} else {
 			Picasso.with(mContext).load(R.drawable.no_avatar).into(imageView);
 		}
@@ -48,7 +49,8 @@ public class PicassoImageLoader {
 	}
 
 	public void displayImage(int resourceId, ImageView imageView) {
-		Picasso.with(mContext).load(resourceId).placeholder(R.drawable.no_page).error(R.drawable.no_page).into(imageView);
+		Picasso.with(mContext).load(resourceId).placeholder(R.drawable.no_page).error(R.drawable.no_page)
+				.into(imageView);
 	}
 
 	public void displayImage(int resourceId, ImageView imageView, int placeholder) {

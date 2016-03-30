@@ -22,7 +22,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
-        android:name="fast.dev.platform.android.application.MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
@@ -41,7 +41,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <activity
-            android:name="fast.dev.platform.android.activity.LoadingActivity"
+            android:name=".activity.LoadingActivity"
             android:label="@string/app_name"
             android:theme="@style/MyTheme.LoadingPage" >
             <intent-filter>
@@ -51,37 +51,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="fast.dev.platform.android.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/home_text"
             android:theme="@style/MyTheme.NoActionBar.Light" >
         </activity>
         <activity
-            android:name="fast.dev.platform.android.activity.BootActivity"
+            android:name=".activity.BootActivity"
             android:theme="@style/MyTheme.FullscreenAppTheme" >
         </activity>
         <activity
-            android:name="fast.dev.platform.android.activity.account.LoginActivity"
+            android:name=".activity.account.Login111Activity"
             android:label="@string/login_text"
             android:theme="@style/MyTheme.NoActionBar.Light.Translucent"
             android:windowSoftInputMode="adjustPan" >
         </activity>
-        <activity android:name="fast.dev.platform.android.activity.account.ProfileActivity" >
+        <activity android:name=".activity.account.ProfileActivity" >
         </activity>
-        <activity android:name="fast.dev.platform.android.activity.account.RegisterActivity" >
+        <activity android:name=".activity.account.RegisterActivity" >
         </activity>
-        <activity android:name="fast.dev.platform.android.activity.account.ModifyPasswordActivity" >
+        <activity android:name=".activity.account.ModifyPasswordActivity" >
         </activity>
         <activity
-            android:name="fast.dev.platform.android.activity.SettingsActivity"
+            android:name=".activity.SettingsActivity"
             android:theme="@style/MyTheme.NoActionBar.Light" >
         </activity>
         <activity
             android:name=".activity.CheeseDetailActivity"
-            android:theme="@style/MyTheme.NoActionBar.Light"
-            android:parentActivityName=".activity.MainActivity" >
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/MyTheme.NoActionBar.Light" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
+        </activity>
+        <activity
+            android:name="fast.dev.platform.android.activity.account.LoginActivity"
+            android:theme="@style/MyTheme.NoActionBar.Light" >
         </activity>
     </application>
 

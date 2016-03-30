@@ -201,7 +201,7 @@ public class RegisterStep02Activity extends BaseActivity {
 					countdown.setVisibility(View.VISIBLE);
 					countdown.setText("（60s）");
 					reget_captcha.setOnClickListener(null);
-					reget_captcha.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_bac_grey));
+					reget_captcha.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_round_grey));
 					reget_captcha_text.setTextColor(getResources().getColor(android.R.color.black));
 					
 					countdown();
@@ -229,7 +229,7 @@ public class RegisterStep02Activity extends BaseActivity {
 					countdown.setVisibility(View.VISIBLE);
 					countdown.setText("（60s）");
 					reget_captcha.setOnClickListener(null);
-					reget_captcha.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_bac_grey));
+					reget_captcha.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_round_grey));
 					reget_captcha_text.setTextColor(getResources().getColor(android.R.color.black));
 					
 					countdown();
@@ -258,7 +258,7 @@ public class RegisterStep02Activity extends BaseActivity {
 				} else {
 					countdown.setVisibility(View.GONE);
 					reget_captcha.setOnClickListener(RegisterStep02Activity.this);
-					reget_captcha.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_bac));
+					reget_captcha.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_round_blue));
 					reget_captcha_text.setTextColor(getResources().getColor(android.R.color.white));
 				}
 			}

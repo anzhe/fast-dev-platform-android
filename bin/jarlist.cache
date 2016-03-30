@@ -1,9 +1,9 @@
 # cache for current jar dependency. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1458915391000 4430 4b857e5d62a7243e74fd0307639fff5a54f8f030 /Users/Rong/git/fast-dev-platform-android/dependencies/ptr-lib/libs/clog-1.0.2.jar
-1458915391000 4430 4b857e5d62a7243e74fd0307639fff5a54f8f030 /Users/Rong/git/fast-dev-platform-android/dependencies/cube-sdk/libs/clog-1.0.2.jar
-1458915391000 1604 d7921949199f243e3a7b111cb09c246f009b4120 /Users/Rong/git/fast-dev-platform-android/dependencies/ptr-lib/libs/clog-1.0.2-sources.jar
-1458915391000 1604 d7921949199f243e3a7b111cb09c246f009b4120 /Users/Rong/git/fast-dev-platform-android/dependencies/cube-sdk/libs/clog-1.0.2-sources.jar
-1458915391000 1422188 1dc1f63cee098b27db60b9a2833fd7ca58f89636 /Users/Rong/git/fast-dev-platform-android/dependencies/cube-sdk/libs/android-support-v4.jar
-1458654868000 1422188 1dc1f63cee098b27db60b9a2833fd7ca58f89636 /Users/Rong/Documents/my-dev-ws/android-support-v7-appcompat/libs/android-support-v4.jar
+1457938356133 4430 4b857e5d62a7243e74fd0307639fff5a54f8f030 D:\git-repository\fast-dev-platform-android\dependencies\cube-sdk\libs\clog-1.0.2.jar
+1457939891765 4430 4b857e5d62a7243e74fd0307639fff5a54f8f030 D:\git-repository\fast-dev-platform-android\dependencies\ptr-lib\libs\clog-1.0.2.jar
+1457938356118 1604 d7921949199f243e3a7b111cb09c246f009b4120 D:\git-repository\fast-dev-platform-android\dependencies\cube-sdk\libs\clog-1.0.2-sources.jar
+1457939891750 1604 d7921949199f243e3a7b111cb09c246f009b4120 D:\git-repository\fast-dev-platform-android\dependencies\ptr-lib\libs\clog-1.0.2-sources.jar
+1458205300852 1422188 1dc1f63cee098b27db60b9a2833fd7ca58f89636 D:\my-dev-ws\android-support-v7-appcompat\libs\android-support-v4.jar
+1458205300852 1422188 1dc1f63cee098b27db60b9a2833fd7ca58f89636 D:\git-repository\fast-dev-platform-android\dependencies\cube-sdk\libs\android-support-v4.jar

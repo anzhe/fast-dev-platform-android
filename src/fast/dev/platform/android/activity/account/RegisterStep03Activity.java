@@ -162,7 +162,7 @@ public class RegisterStep03Activity extends BaseActivity {
 
 				TestinAgent.uploadException(getContext(), "调用服务器端接口报错", error);
 				
-				Intent intent = new Intent(getContext(), LoginActivity.class);
+				Intent intent = new Intent(getContext(), Login111Activity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				startActivity(intent);
 			}

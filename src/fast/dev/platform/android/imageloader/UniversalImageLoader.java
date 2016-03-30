@@ -6,8 +6,8 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.widget.ImageView;
+import fast.dev.platform.android.R;
 
 public class UniversalImageLoader {
 
@@ -24,7 +24,8 @@ public class UniversalImageLoader {
 			mImageLoader = ImageLoader.getInstance();
 			if (!mImageLoader.isInited()) {
 				DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true)
-						.build();
+						.showImageForEmptyUri(R.drawable.no_page).showImageOnLoading(R.drawable.no_page)
+						.showImageOnFail(R.drawable.no_page).build();
 				ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
 						.defaultDisplayImageOptions(options).build();
 				mImageLoader.init(config);
@@ -34,15 +35,25 @@ public class UniversalImageLoader {
 	}
 
 	public void displayImage(String uri, ImageView imageView) {
-		if (!TextUtils.isEmpty(uri)) {
-			mImageLoader.displayImage(uri, imageView);
-		}
+		mImageLoader.displayImage(uri, imageView);
 	}
 
 	public void displayImage(String uri, ImageView imageView, ImageLoadingListener imageLoadingListener) {
-		if (!TextUtils.isEmpty(uri)) {
-			mImageLoader.displayImage(uri, imageView, imageLoadingListener);
-		}
+		mImageLoader.displayImage(uri, imageView, imageLoadingListener);
+	}
+
+	public void displayImageForAvatar(String uri, ImageView imageView) {
+		DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true)
+				.showImageForEmptyUri(R.drawable.no_avatar).showImageOnLoading(R.drawable.no_avatar)
+				.showImageOnFail(R.drawable.no_avatar).build();
+		mImageLoader.displayImage(uri, imageView, options);
+	}
+
+	public void displayImageForAvatar(String uri, ImageView imageView, ImageLoadingListener imageLoadingListener) {
+		DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true)
+				.showImageForEmptyUri(R.drawable.no_avatar).showImageOnLoading(R.drawable.no_avatar)
+				.showImageOnFail(R.drawable.no_avatar).build();
+		mImageLoader.displayImage(uri, imageView, options, imageLoadingListener);
 	}
 
 }

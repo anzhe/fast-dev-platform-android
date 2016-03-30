@@ -109,7 +109,7 @@ public class ForgetPasswordStep03Activity extends BaseActivity {
 				RegisterBusinessBean registerBusinessBean = gson.fromJson(response, RegisterBusinessBean.class);
 				if (handleRequestResult(registerBusinessBean)) {
 					ToastUtils.showShort(getContext(), registerBusinessBean.getResultdesc());
-					Intent intent = new Intent(getContext(), LoginActivity.class);
+					Intent intent = new Intent(getContext(), Login111Activity.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 					startActivity(intent);
 				}
@@ -127,7 +127,7 @@ public class ForgetPasswordStep03Activity extends BaseActivity {
 				
 				CommonUtils.dismissProgressDialog();
 				
-				Intent intent = new Intent(getContext(), LoginActivity.class);
+				Intent intent = new Intent(getContext(), Login111Activity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				startActivity(intent);
 			}

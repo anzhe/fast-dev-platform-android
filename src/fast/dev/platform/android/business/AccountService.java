@@ -14,7 +14,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import fast.dev.platform.android.activity.account.LoginActivity;
+import fast.dev.platform.android.activity.account.Login111Activity;
 import fast.dev.platform.android.activity.account.RegisterActivity;
 import fast.dev.platform.android.bean.LoginBean;
 import fast.dev.platform.android.bean.business.LoginBussniseBean;
@@ -87,7 +87,7 @@ public class AccountService implements ErrorListener {
 					
 					CommonUtils.user_sp(mContext).edit().putBoolean("logged_on", false).apply();// 未登录标记
 					
-					Intent loginIntent = new Intent(mContext, LoginActivity.class);
+					Intent loginIntent = new Intent(mContext, Login111Activity.class);
 					loginIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 					mContext.startActivity(loginIntent);
 				}

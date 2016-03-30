@@ -159,7 +159,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/button_bac"
+        android:background="@drawable/button_round_blue"
         android:text="完成注册"
         android:textColor="@android:color/white" />
 
