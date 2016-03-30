@@ -8,6 +8,7 @@ import android.widget.EditText;
 import fast.dev.platform.android.R;
 import fast.dev.platform.android.activity.MainActivity;
 import fast.dev.platform.android.activity.base.BaseActivity;
+import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.ToastUtils;
 
 public class LoginActivity extends BaseActivity {
@@ -26,16 +27,25 @@ public class LoginActivity extends BaseActivity {
 	}
 
 	public void login(View v) {
-		String account_str = account.getText().toString().trim();
-		String password_str = password.getText().toString().trim();
+		String account_str = account.getText().toString();
+		String password_str = password.getText().toString();
 		if (TextUtils.isEmpty(account_str)) {
 			ToastUtils.showShort(getContext(), "请输入用户名/邮箱/手机号");
+			account.requestFocus();
 			return;
 		}
 		if (TextUtils.isEmpty(password_str)) {
 			ToastUtils.showShort(getContext(), "请输入密码");
+			password.requestFocus();
 			return;
 		}
+		if (password_str.length() < 6) {
+			ToastUtils.showShort(getContext(), "密码长度不能小于6位");
+			password.requestFocus();
+			password.setSelection(password.length());
+			return;
+		}
+		CommonUtils.hideSoftKeyboard(v);
 		finishActivity();
 		startActivity(new Intent(getContext(), MainActivity.class));
 	}
