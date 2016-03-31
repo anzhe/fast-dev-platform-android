@@ -134,6 +134,14 @@
                 android:value=".activity.MainActivity" />
         </activity>
         <activity
+            android:name=".activity.LawyerDetailActivity"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/MyTheme.NoActionBar.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
+        <activity
             android:name="fast.dev.platform.android.activity.account.LoginActivity"
             android:theme="@style/MyTheme.NoActionBar.Light" >
         </activity>

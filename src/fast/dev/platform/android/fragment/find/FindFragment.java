@@ -3,10 +3,8 @@ package fast.dev.platform.android.fragment.find;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
 import com.android.volley.Response.Listener;
-import com.bumptech.glide.Glide;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,14 +20,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import fast.dev.platform.android.R;
 import fast.dev.platform.android.activity.CheeseDetailActivity;
+import fast.dev.platform.android.activity.LawyerDetailActivity;
 import fast.dev.platform.android.bean.LawyerBean;
 import fast.dev.platform.android.bean.business.LawyerBusinessBean;
 import fast.dev.platform.android.constant.CommonData;
 import fast.dev.platform.android.fragment.base.BaseFragment;
 import fast.dev.platform.android.http.volley.VolleyWrapper;
-import fast.dev.platform.android.model.Cheeses;
+import fast.dev.platform.android.imageloader.UniversalImageLoader;
 import fast.dev.platform.android.util.CommonUtils;
-import fast.dev.platform.android.util.ToastUtils;
+import view.RecyclerViewDivider;
 
 public class FindFragment extends BaseFragment {
 
@@ -38,6 +37,8 @@ public class FindFragment extends BaseFragment {
 	private List<LawyerBean> lawyerBeans = new ArrayList<LawyerBean>();
 
 	private HashMap<String, String> queryParams = new HashMap<String, String>();
+
+	private MyRecyclerViewAdapter myRecyclerViewAdapter;
 
 	@Nullable
 	@Override
@@ -52,35 +53,23 @@ public class FindFragment extends BaseFragment {
 		super.onResume();
 
 		queryParams.put("pageno", "1");
-		queryParams.put("pagesize", (page_no * 10) + "");
+		queryParams.put("pagesize", (page_no * 100) + "");
 		getLawyerList(false, true);
 	}
 
 	private void setupRecyclerView(RecyclerView recyclerView) {
+		recyclerView.addItemDecoration(new RecyclerViewDivider(getContext(), LinearLayoutManager.VERTICAL));
 		recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-		recyclerView.setAdapter(
-				new SimpleStringRecyclerViewAdapter(getActivity(), getRandomSublist(Cheeses.sCheeseStrings, 30)));
+		myRecyclerViewAdapter = new MyRecyclerViewAdapter(getActivity());
+		recyclerView.setAdapter(myRecyclerViewAdapter);
 	}
 
-	private List<String> getRandomSublist(String[] array, int amount) {
-		ArrayList<String> list = new ArrayList<>(amount);
-		Random random = new Random();
-		while (list.size() < amount) {
-			list.add(array[random.nextInt(array.length)]);
-		}
-		return list;
-	}
-
-	public static class SimpleStringRecyclerViewAdapter
-			extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
+	public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
 		private final TypedValue mTypedValue = new TypedValue();
 		private int mBackground;
-		private List<String> mValues;
 
-		public static class ViewHolder extends RecyclerView.ViewHolder {
-
-			public String mBoundString;
+		public class ViewHolder extends RecyclerView.ViewHolder {
 
 			public final View mView;
 			public final ImageView mImageView;
@@ -100,14 +89,9 @@ public class FindFragment extends BaseFragment {
 
 		}
 
-		public String getValueAt(int position) {
-			return mValues.get(position);
-		}
-
-		public SimpleStringRecyclerViewAdapter(Context context, List<String> items) {
+		public MyRecyclerViewAdapter(Context context) {
 			context.getTheme().resolveAttribute(R.attr.selectableItemBackground, mTypedValue, true);
 			mBackground = mTypedValue.resourceId;
-			mValues = items;
 		}
 
 		@Override
@@ -119,28 +103,28 @@ public class FindFragment extends BaseFragment {
 
 		@Override
 		public void onBindViewHolder(final ViewHolder holder, int position) {
-			holder.mBoundString = mValues.get(position);
-			holder.mTextView.setText(mValues.get(position));
+			final LawyerBean selectedLawyer = lawyerBeans.get(position);
+			holder.mTextView.setText(selectedLawyer.getREL_NAME());
 
 			holder.mView.setOnClickListener(new View.OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
 					Context context = v.getContext();
-					Intent intent = new Intent(context, CheeseDetailActivity.class);
-					intent.putExtra(CheeseDetailActivity.EXTRA_NAME, holder.mBoundString);
+					Intent intent = new Intent(context, LawyerDetailActivity.class);
+					intent.putExtra(LawyerDetailActivity.EXTRA_NAME, selectedLawyer);
 					context.startActivity(intent);
 				}
 
 			});
 
-			Glide.with(holder.mImageView.getContext()).load(Cheeses.getRandomCheeseDrawable()).fitCenter()
-					.into(holder.mImageView);
+			UniversalImageLoader.getInstance(getContext()).displayImageForAvatar(selectedLawyer.getPHOTO(),
+					holder.mImageView);
 		}
 
 		@Override
 		public int getItemCount() {
-			return mValues.size();
+			return lawyerBeans.size();
 		}
 
 	}
@@ -158,13 +142,13 @@ public class FindFragment extends BaseFragment {
 
 			@Override
 			public void onResponse(String response) {
-				ToastUtils.showLong(getContext(), response);
 				LawyerBusinessBean lawyerBusinessBean = gson.fromJson(response, LawyerBusinessBean.class);
 				if (handleRequestResult(lawyerBusinessBean)) {
 					if (clearData) {
 						lawyerBeans.clear();
 					}
 					lawyerBeans.addAll(lawyerBusinessBean.getData().getLstdata());
+					myRecyclerViewAdapter.notifyDataSetChanged();
 				}
 
 				CommonUtils.dismissProgressDialog();
