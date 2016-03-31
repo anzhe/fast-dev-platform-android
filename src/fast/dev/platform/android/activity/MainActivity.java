@@ -3,7 +3,21 @@ package fast.dev.platform.android.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.umeng.socialize.controller.UMServiceFactory;
+import com.umeng.socialize.controller.UMSocialService;
+import com.umeng.socialize.media.MailShareContent;
+import com.umeng.socialize.media.QQShareContent;
+import com.umeng.socialize.media.QZoneShareContent;
+import com.umeng.socialize.media.SinaShareContent;
+import com.umeng.socialize.media.SmsShareContent;
+import com.umeng.socialize.media.TencentWbShareContent;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.weixin.media.CircleShareContent;
+import com.umeng.socialize.weixin.media.WeiXinShareContent;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -15,18 +29,30 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import fast.dev.platform.android.R;
+import fast.dev.platform.android.activity.account.LoginActivity;
+import fast.dev.platform.android.activity.base.BaseActivity;
+import fast.dev.platform.android.application.MyApplication;
+import fast.dev.platform.android.constant.CommonData;
+import fast.dev.platform.android.constant.Constants;
 import fast.dev.platform.android.fragment.CheeseListFragment;
+import fast.dev.platform.android.fragment.find.FindFragment;
+import fast.dev.platform.android.util.ThirdPartyUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 	private DrawerLayout mDrawerLayout;
+	private FloatingActionButton mFloatingActionButton;
 
+	private UMSocialService umSocialService = UMServiceFactory.getUMSocialService(Constants.DESCRIPTOR_SHARE);
+	
+	private int back_clicked_count = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,9 +62,10 @@ public class MainActivity extends AppCompatActivity {
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
-		final ActionBar ab = getSupportActionBar();
-		ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-		ab.setDisplayHomeAsUpEnabled(true);
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowTitleEnabled(false);
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -52,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
 			setupViewPager(viewPager);
 		}
 
-		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-		fab.setOnClickListener(new View.OnClickListener() {
+		mFloatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+		mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
@@ -64,11 +91,15 @@ public class MainActivity extends AppCompatActivity {
 
 		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 		tabLayout.setupWithViewPager(viewPager);
+		
+		ThirdPartyUtils.addQZoneQQPlatform(MainActivity.this);
+		ThirdPartyUtils.addSinaWeiboPlatform();
+		ThirdPartyUtils.addWeixinPlatform(getContext());
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.sample_actions, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
@@ -78,15 +109,28 @@ public class MainActivity extends AppCompatActivity {
 		case android.R.id.home:
 			mDrawerLayout.openDrawer(GravityCompat.START);
 			return true;
+		case R.id.action_settings:
+			startActivity(new Intent(getContext(), SettingsActivity.class));
+			return true;
+		case R.id.action_share:
+			share();
+			return true;
+		case R.id.action_logout:
+			user_sp.edit().clear().apply();
+			startActivity(new Intent(getContext(), LoginActivity.class));
+			finishActivity();
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
 	private void setupViewPager(ViewPager viewPager) {
 		Adapter adapter = new Adapter(getSupportFragmentManager());
-		adapter.addFragment(new CheeseListFragment(), "Category 1");
-		adapter.addFragment(new CheeseListFragment(), "Category 2");
-		adapter.addFragment(new CheeseListFragment(), "Category 3");
+		adapter.addFragment(new CheeseListFragment(), "首页");
+		adapter.addFragment(new FindFragment(), "发现");
+		adapter.addFragment(new CheeseListFragment(), "热门");
+		adapter.addFragment(new CheeseListFragment(), "地区");
+		adapter.addFragment(new CheeseListFragment(), "地图");
 		viewPager.setAdapter(adapter);
 	}
 
@@ -133,5 +177,102 @@ public class MainActivity extends AppCompatActivity {
 		}
 
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_BACK:
+			back_clicked_count++;
+			if (back_clicked_count == 2) {
+				MyApplication.getInstance().exit();
+			} else {
+//				ToastUtils.showShort(getContext(), "再按一次退出");
+				Snackbar.make(mFloatingActionButton, "再按一次退出", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+			}
+			new Handler().postDelayed(new Runnable() {
+				
+				@Override
+				public void run() {
+					back_clicked_count = 0;
+				}
+				
+			}, 1500);
+			return false;
+		}
 
+		return super.onKeyDown(keyCode, event);
+	}
+	
+	private void share() {
+		//mController.getConfig().setSsoHandler(new SinaSsoHandler());
+		//mController.getConfig().setSsoHandler(new TencentWBSsoHandler());
+		
+		String share_title = "快速开发平台-安卓";
+		String share_content = "仅供学习 切勿模仿 珍惜生命 远离挨踢";
+		String share_url = CommonData.SHARE_URL + user_sp.getString("MY_INVITED_CODE", "");
+
+		umSocialService.setShareContent(share_content);
+
+		UMImage localImage = new UMImage(getContext(), R.drawable.app_logo);
+
+		WeiXinShareContent weixinContent = new WeiXinShareContent();
+		weixinContent.setTitle(share_title);
+		weixinContent.setShareContent(share_content);
+		weixinContent.setTargetUrl(share_url);
+		weixinContent.setShareMedia(localImage);
+		umSocialService.setShareMedia(weixinContent);
+
+		// 设置朋友圈分享的内容
+		CircleShareContent circleMedia = new CircleShareContent();
+		circleMedia.setTitle(share_title);
+		circleMedia.setShareContent(share_content);
+		circleMedia.setTargetUrl(share_url);
+		circleMedia.setShareMedia(localImage);
+		umSocialService.setShareMedia(circleMedia);
+
+		// 设置QQ空间分享内容
+		QZoneShareContent qzone = new QZoneShareContent();
+		qzone.setTitle(share_title);
+		qzone.setShareContent(share_content);
+		qzone.setTargetUrl(share_url);
+		qzone.setShareMedia(localImage);
+		umSocialService.setShareMedia(qzone);
+
+		QQShareContent qqShareContent = new QQShareContent();
+		qqShareContent.setTitle(share_title);
+		qqShareContent.setShareContent(share_content);
+		qqShareContent.setTargetUrl(share_url);
+		qqShareContent.setShareMedia(localImage);
+		umSocialService.setShareMedia(qqShareContent);
+
+		// 设置腾讯微博分享内容
+		TencentWbShareContent tencent = new TencentWbShareContent();
+		tencent.setTitle(share_title);
+		tencent.setShareContent(share_content);
+		tencent.setTargetUrl(share_url);
+		tencent.setShareImage(localImage);
+		umSocialService.setShareMedia(tencent);
+
+		// 设置邮件分享内容， 如果需要分享图片则只支持本地图片
+		MailShareContent mail = new MailShareContent(localImage);
+		mail.setTitle(share_title);
+		mail.setShareContent(share_content);
+		mail.setShareImage(localImage);
+		umSocialService.setShareMedia(mail);
+
+		// 设置短信分享内容
+		SmsShareContent sms = new SmsShareContent();
+		sms.setShareContent(share_content + share_url);
+		umSocialService.setShareMedia(sms);
+
+		SinaShareContent sinaContent = new SinaShareContent();
+		sinaContent.setTitle(share_title);
+		sinaContent.setShareContent(share_content);
+		sinaContent.setTargetUrl(share_url);
+		sinaContent.setShareImage(localImage);
+		umSocialService.setShareMedia(sinaContent);
+		
+		umSocialService.openShare(MainActivity.this, false);
+	}
+	
 }

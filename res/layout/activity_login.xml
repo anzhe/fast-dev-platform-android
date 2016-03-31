@@ -17,7 +17,7 @@
             android:layout_marginBottom="25dp"
             android:layout_marginTop="35dp"
             android:gravity="center"
-            android:text="快速开发平台-安卓"
+            android:text="@string/app_name"
             android:textColor="#666" />
 
         <com.wrapp.floatlabelededittext.FloatLabeledEditText
@@ -28,6 +28,7 @@
                 android:id="@+id/account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="用户名/邮箱/手机号"
                 android:textSize="14sp" />
         </com.wrapp.floatlabelededittext.FloatLabeledEditText>
@@ -154,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:textSize="11sp"
-        android:text="Powered by Rong" />
+        android:text="Powered by Rong"
+        android:textSize="11sp" />
 
 </RelativeLayout>

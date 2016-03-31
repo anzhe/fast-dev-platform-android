@@ -64,10 +64,10 @@ public class LoadingActivity extends BaseActivity {
 		super.onResume();
 		
 		if (NetworkUtils.isOpen(getContext())) {
-			long time = 0;
-			if (sys_sp.getBoolean("dict_exist", false)) {
-				time = 2000;
-			}
+			long time = 2000;
+//			if (!sys_sp.getBoolean("dict_exist", false)) {
+//				time = 0;
+//			}
 			new Handler().postDelayed(new Runnable() {
 				
 				@Override
@@ -81,8 +81,8 @@ public class LoadingActivity extends BaseActivity {
 				
 				@Override
 				public void run() {
-					finish();
 					startActivity(new Intent(getContext(), LoginActivity.class));
+					finishActivity();
 				}
 				
 			}, 2000);
@@ -98,8 +98,8 @@ public class LoadingActivity extends BaseActivity {
 			finish();
 		} else {
 			if (user_sp.getBoolean("logged_on", false)) {
-				finishActivity();
 				startActivity(new Intent(getContext(), MainActivity.class));
+				finishActivity();
 				
 //				final User user = new Select().from(User.class).where("Account=?", user_sp.getString("account", "")).executeSingle();
 //				if (user != null) {
@@ -120,8 +120,8 @@ public class LoadingActivity extends BaseActivity {
 //					startActivity(new Intent(getContext(), LoginActivity.class));
 //				}
 			} else {
-				finish();
 				startActivity(new Intent(getContext(), LoginActivity.class));
+				finishActivity();
 			}
 		}
 		

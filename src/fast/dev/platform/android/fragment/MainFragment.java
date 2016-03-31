@@ -26,7 +26,7 @@ import fast.dev.platform.android.application.MyApplication;
 import fast.dev.platform.android.broadcastreceiver.NetworkChangeBroadcastReceiver;
 import fast.dev.platform.android.constant.CommonData;
 import fast.dev.platform.android.fragment.base.BaseFragment;
-import fast.dev.platform.android.fragment.find.FindFragment;
+import fast.dev.platform.android.fragment.find.FindFragment111;
 import fast.dev.platform.android.fragment.home.HomeFragment;
 import fast.dev.platform.android.fragment.my.MyFragment;
 import fast.dev.platform.android.fragment.second.HotspotFragment;
@@ -326,7 +326,7 @@ public class MainFragment extends BaseFragment {
 			currentPageIndex = 2;
 			oldPageIndex = 2;
 			
-			currentFragment = new FindFragment();
+			currentFragment = new FindFragment111();
 			
 			home_tv1.setTextColor(getResources().getColor(android.R.color.black));
 			home_tv2.setTextColor(getResources().getColor(android.R.color.black));

@@ -117,8 +117,8 @@ public class CommonData {
 	public final static String SHARE_URL = "http://www.ls12348.cn/wap/share/index.html?code=";
 	
 	// 正式环境
-//	public final static String REMOTE_REQUEST_URL_HTTP = "http://www.ls12348.cn/law";
-//	public final static String REMOTE_REQUEST_URL_HTTPS = "https://www.ls12348.cn:443/law";
+	public final static String REMOTE_REQUEST_URL_HTTP = "http://www.ls12348.cn/law";
+	public final static String REMOTE_REQUEST_URL_HTTPS = "https://www.ls12348.cn:443/law";
 	
 	// 本地地址
 //	public static String REMOTE_REQUEST_URL_HTTP = "http://192.168.0.109:8080/lawInterface";
@@ -135,8 +135,8 @@ public class CommonData {
 	
 	// 测试地址
 //	public final static String REMOTE_REQUEST_URL_HTTP = "http://192.168.0.221:8030/law";
-	public final static String REMOTE_REQUEST_URL_HTTP = "http://192.168.0.205:8029/law";
-	public final static String REMOTE_REQUEST_URL_HTTPS = "https://192.168.0.205:8031/law";
+//	public final static String REMOTE_REQUEST_URL_HTTP = "http://192.168.0.205:8029/law";
+//	public final static String REMOTE_REQUEST_URL_HTTPS = "https://192.168.0.205:8031/law";
 //	public final static String REMOTE_REQUEST_URL_HTTP = "http://www.fjzqyd.com:8821/law";
 //	public final static String REMOTE_REQUEST_URL_HTTPS = "https://www.fjzqyd.com:8823/law";
 	
