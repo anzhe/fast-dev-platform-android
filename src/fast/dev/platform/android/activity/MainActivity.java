@@ -3,6 +3,7 @@ package fast.dev.platform.android.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.amap.api.location.AMapLocation;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
 import com.umeng.socialize.media.MailShareContent;
@@ -34,6 +35,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import fast.dev.platform.android.R;
 import fast.dev.platform.android.activity.account.LoginActivity;
 import fast.dev.platform.android.activity.base.BaseActivity;
@@ -42,12 +44,16 @@ import fast.dev.platform.android.constant.CommonData;
 import fast.dev.platform.android.constant.Constants;
 import fast.dev.platform.android.fragment.CheeseListFragment;
 import fast.dev.platform.android.fragment.find.FindFragment;
+import fast.dev.platform.android.location.GaodeRequestLocation;
+import fast.dev.platform.android.location.GaodeRequestLocation.LocationCallback;
 import fast.dev.platform.android.util.ThirdPartyUtils;
+import fast.dev.platform.android.util.ToastUtils;
 
 public class MainActivity extends BaseActivity {
 
 	private DrawerLayout mDrawerLayout;
 	private FloatingActionButton mFloatingActionButton;
+	private TextView location_tv;
 
 	private UMSocialService umSocialService = UMServiceFactory.getUMSocialService(Constants.DESCRIPTOR_SHARE);
 	
@@ -59,6 +65,20 @@ public class MainActivity extends BaseActivity {
 
 		setContentView(R.layout.activity_main);
 
+		location_tv = (TextView) findViewById(R.id.location);
+		GaodeRequestLocation gaodeRequestLocation = new GaodeRequestLocation(getContext(), true);
+		gaodeRequestLocation.location(new LocationCallback() {
+			
+			@Override
+			public void callback(AMapLocation location, boolean located) {
+				if (located) {
+					ToastUtils.showLong(getContext(), location.getProvince() + "-" + location.getCity() + "-" + location.getDistrict());
+					location_tv.setText(location.getProvince() + "-" + location.getCity() + "-" + location.getDistrict());
+				}
+			}
+			
+		});
+		
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
