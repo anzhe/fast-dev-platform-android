@@ -3,7 +3,6 @@ package fast.dev.platform.android.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.amap.api.location.AMapLocation;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
 import com.umeng.socialize.media.MailShareContent;
@@ -29,6 +28,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.DrawerLayout.DrawerListener;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -44,10 +44,9 @@ import fast.dev.platform.android.constant.CommonData;
 import fast.dev.platform.android.constant.Constants;
 import fast.dev.platform.android.fragment.CheeseListFragment;
 import fast.dev.platform.android.fragment.find.FindFragment;
-import fast.dev.platform.android.location.GaodeRequestLocation;
-import fast.dev.platform.android.location.GaodeRequestLocation.LocationCallback;
+import fast.dev.platform.android.fragment.home.HomeFragment;
+import fast.dev.platform.android.fragment.map.MapFragment;
 import fast.dev.platform.android.util.ThirdPartyUtils;
-import fast.dev.platform.android.util.ToastUtils;
 
 public class MainActivity extends BaseActivity {
 
@@ -65,20 +64,6 @@ public class MainActivity extends BaseActivity {
 
 		setContentView(R.layout.activity_main);
 
-		location_tv = (TextView) findViewById(R.id.location);
-		GaodeRequestLocation gaodeRequestLocation = new GaodeRequestLocation(getContext(), true);
-		gaodeRequestLocation.location(new LocationCallback() {
-			
-			@Override
-			public void callback(AMapLocation location, boolean located) {
-				if (located) {
-					ToastUtils.showLong(getContext(), location.getProvince() + "-" + location.getCity() + "-" + location.getDistrict());
-					location_tv.setText(location.getProvince() + "-" + location.getCity() + "-" + location.getDistrict());
-				}
-			}
-			
-		});
-		
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
@@ -88,12 +73,38 @@ public class MainActivity extends BaseActivity {
 		actionBar.setDisplayShowTitleEnabled(false);
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mDrawerLayout.addDrawerListener(new DrawerListener() {
+			
+			@Override
+			public void onDrawerStateChanged(int arg0) {
+				
+			}
+			
+			@Override
+			public void onDrawerSlide(View arg0, float arg1) {
+				
+			}
+			
+			@Override
+			public void onDrawerOpened(View arg0) {
+				
+			}
+			
+			@Override
+			public void onDrawerClosed(View arg0) {
+				
+			}
+			
+		});
 
 		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		if (navigationView != null) {
 			setupDrawerContent(navigationView);
 		}
 
+		location_tv = (TextView) navigationView.getHeaderView(0).findViewById(R.id.location);
+		location_tv.setText(location_sp.getString("province", "") + "-" + location_sp.getString("city", "") + "-" + location_sp.getString("district", ""));
+		
 		ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 		if (viewPager != null) {
 			setupViewPager(viewPager);
@@ -146,11 +157,11 @@ public class MainActivity extends BaseActivity {
 
 	private void setupViewPager(ViewPager viewPager) {
 		Adapter adapter = new Adapter(getSupportFragmentManager());
-		adapter.addFragment(new CheeseListFragment(), "首页");
+		adapter.addFragment(new HomeFragment(), "首页");
 		adapter.addFragment(new FindFragment(), "发现");
 		adapter.addFragment(new CheeseListFragment(), "热门");
 		adapter.addFragment(new CheeseListFragment(), "地区");
-		adapter.addFragment(new CheeseListFragment(), "地图");
+		adapter.addFragment(new MapFragment(), "地图");
 		viewPager.setAdapter(adapter);
 	}
 

@@ -1,5 +1,6 @@
 package fast.dev.platform.android.activity;
 
+import com.amap.api.location.AMapLocation;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.testin.agent.TestinAgent;
 
@@ -11,6 +12,8 @@ import fast.dev.platform.android.R;
 import fast.dev.platform.android.activity.account.LoginActivity;
 import fast.dev.platform.android.activity.base.BaseActivity;
 import fast.dev.platform.android.business.AccountService;
+import fast.dev.platform.android.location.GaodeRequestLocation;
+import fast.dev.platform.android.location.GaodeRequestLocation.LocationCallback;
 import fast.dev.platform.android.util.BrowsingHistoryUtils;
 import fast.dev.platform.android.util.CommonUtils;
 import fast.dev.platform.android.util.NetworkUtils;
@@ -29,6 +32,22 @@ public class LoadingActivity extends BaseActivity {
 		 * Bugly
 		 */
 		CrashReport.setUserSceneTag(getContext(), 11887);
+		
+		GaodeRequestLocation gaodeRequestLocation = new GaodeRequestLocation(getContext(), true);
+		gaodeRequestLocation.location(new LocationCallback() {
+			
+			@Override
+			public void callback(AMapLocation location, boolean located) {
+				if (located) {
+					location_sp.edit().putString("longitude", location.getLongitude() + "").apply();
+					location_sp.edit().putString("latitude", location.getLatitude() + "").apply();
+					location_sp.edit().putString("province", location.getProvince()).apply();
+					location_sp.edit().putString("city", location.getCity()).apply();
+					location_sp.edit().putString("district", location.getDistrict()).apply();
+				}
+			}
+			
+		});
 		
 		accountService = new AccountService(getContext(), volleyWrapper);
 		

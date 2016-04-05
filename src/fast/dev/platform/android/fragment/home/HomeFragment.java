@@ -176,6 +176,9 @@ public class HomeFragment extends BaseFragment {
 					});
 					//mImageLoader.displayImage(image, imageView, R.drawable.no_page);
 				}
+			} else {
+				mImageLoader.displayImage(R.drawable.default_banner, imageView, R.drawable.loading);
+				imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 			}
 			return imageView;
 		}

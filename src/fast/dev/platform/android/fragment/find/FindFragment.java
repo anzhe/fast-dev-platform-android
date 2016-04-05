@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import fast.dev.platform.android.R;
-import fast.dev.platform.android.activity.CheeseDetailActivity;
 import fast.dev.platform.android.activity.LawyerDetailActivity;
 import fast.dev.platform.android.bean.LawyerBean;
 import fast.dev.platform.android.bean.business.LawyerBusinessBean;
