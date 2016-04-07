@@ -16,6 +16,8 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -82,6 +84,10 @@
             android:name="AA_MODELS"
             android:value="fast.dev.platform.android.model.User,fast.dev.platform.android.model.BrowsingHistory" />
 
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="213906e8c147efe269ebdbf03a9edebb" />
+        
         <!-- 定位需要的服务 -->
         <service android:name="com.amap.api.location.APSService" />
 
